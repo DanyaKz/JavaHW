@@ -47,13 +47,4 @@ public class Flight implements Comparable<Flight> {
         return Integer.compare(number, f.number);
     }
 
-    @Override
-    public String toString() {
-        return "Flight{" +
-                "number=" + number +
-                ", fromCity='" + fromCity + '\'' +
-                ", toCity='" + toCity + '\'' +
-                ", passengers=" + passengers +
-                '}';
-    }
 }

@@ -15,16 +15,6 @@ public class Main {
         printFlightsData();
     }
 
-    static void addPassengersToFlights(){
-        Collections.sort(flights);
-        flights.get(0).addPassengers(passengers.get(0));
-        flights.get(0).addPassengers(passengers.get(1));
-        flights.get(1).addPassengers(passengers.get(2));
-        flights.get(1).addPassengers(passengers.get(3));
-        flights.get(1).addPassengers(passengers.get(4));
-
-    }
-
     static void createFlights(){
         flights.add(new Flight(2, "Tokyo", "Kyoto"));
         flights.add(new Flight(1, "Astana", "Tokyo"));
@@ -38,18 +28,26 @@ public class Main {
         passengers.add(new Passenger("Elizabeth",442356));
     }
 
+    static void addPassengersToFlights(){
+        Collections.sort(flights);
+        flights.get(0).addPassengers(passengers.get(0));
+        flights.get(0).addPassengers(passengers.get(1));
+        flights.get(1).addPassengers(passengers.get(2));
+        flights.get(1).addPassengers(passengers.get(3));
+        flights.get(1).addPassengers(passengers.get(4));
+
+    }
+
     static void fillFligthData(){
         for (Flight f: flights){
             flightsData.put(f.getNumber() , f.getPassengers());
         }
     }
 
-
-
     static void printFlightsData(){
         for (var fg: flightsData.entrySet()){
             String route = flights.get(fg.getKey()-1).getFromCity() +
-                    " - " + flights.get(fg.getKey()-1).getFromCity();
+                    " - " + flights.get(fg.getKey()-1).getToCity();
             System.out.println("Flight " + route);
             for (Passenger p: fg.getValue()){
                 System.out.println("\t" + p.getName());
