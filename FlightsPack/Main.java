@@ -11,7 +11,7 @@ public class Main {
         createFlights();
         createPassengers();
         addPassengersToFlights();
-        fillFligthData();
+        fillFlightData();
         printFlightsData();
     }
 
@@ -38,7 +38,7 @@ public class Main {
 
     }
 
-    static void fillFligthData(){
+    static void fillFlightData(){
         for (Flight f: flights){
             flightsData.put(f.getNumber() , f.getPassengers());
         }
